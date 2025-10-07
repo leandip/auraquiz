@@ -42,7 +42,7 @@
 
         <!-- Pantalla de Bienvenida e Inicio -->
         <div id="welcome-screen">
-            <p class="text-center text-gray-600 mb-8">Responde 3 preguntas simples para descubrir cuál de nuestras bebidas adaptógenas está diseñada perfectamente para tu estado de ánimo y tus objetivos.</p>
+            <p class="text-center text-gray-600 mb-8">Respondé 3 preguntas simples para descubrir cuál de nuestras bebidas es la que necesitás para tu estado de ánimo y tus objetivos.</p>
             <button onclick="startQuiz()" class="w-full py-3 bg-aura-green text-aura-dark font-bold text-lg rounded-xl hover:bg-green-500 transition duration-200 shadow-md">
                 Comenzar Test
             </button>
@@ -63,7 +63,7 @@
 
         <!-- Pantalla de Resultados (oculta inicialmente) -->
         <div id="result-screen" class="hidden text-center">
-            <h3 class="text-2xl font-bold text-aura-dark mb-4">Tu Adaptógeno Recomendado es:</h3>
+            <h3 class="text-2xl font-bold text-aura-dark mb-4">Te recomendamos beber esta Aura:</h3>
             <div class="bg-aura-green/20 p-6 rounded-2xl mb-6">
                 <p class="text-sm font-semibold text-aura-dark uppercase">Bebida Aura</p>
                 <h4 id="recommended-drink-name" class="text-3xl font-extrabold text-aura-dark my-2"></h4>
@@ -71,7 +71,7 @@
             
             <p id="recommended-drink-description" class="text-gray-700 mb-6"></p>
             
-            <p class="text-sm text-gray-500 mb-4">¡Planta tu tarjeta con esta manifestación!</p>
+            <p class="text-sm text-gray-500 mb-4">¡Plantá tu tarjeta con esta manifestación!</p>
 
             <button onclick="resetQuiz()" class="w-full py-3 bg-aura-dark text-white font-bold text-lg rounded-xl hover:bg-gray-700 transition duration-200">
                 Volver a Empezar
@@ -98,32 +98,32 @@
 
         // Estado inicial del quiz
         let currentQuestionIndex = 0;
-        let scores = { focus: 0, energy: 0, calm: 0 };
+        let scores = { Focus: 0, Power: 0, Zen: 0 };
 
         // Definición de las preguntas (cada respuesta suma puntos a una categoría)
         const questions = [
             {
                 text: "¿Cuál es tu mayor desafío en este momento?",
                 options: [
-                    { text: "Me cuesta mucho concentrarme en mis tareas.", score: { focus: 3 } },
-                    { text: "Me siento agotado/a y con poca motivación para empezar.", score: { energy: 3 } },
-                    { text: "Estoy muy estresado/a y me cuesta relajarme.", score: { calm: 3 } }
+                    { text: "Me cuesta mucho concentrarme en mis tareas.", score: { Focus: 3 } },
+                    { text: "Me siento agotado/a y con poca motivación para empezar.", score: { Power: 3 } },
+                    { text: "Estoy muy estresado/a y me cuesta relajarme.", score: { Zen: 3 } }
                 ]
             },
             {
                 text: "¿En qué momento del día sientes el mayor 'bajón'?",
                 options: [
-                    { text: "A media tarde, cuando necesito un extra para seguir.", score: { focus: 2 } },
-                    { text: "Por la mañana, siento que no me levanto.", score: { energy: 2 } },
-                    { text: "Por la noche, mi mente no se desconecta.", score: { calm: 2 } }
+                    { text: "A media tarde, cuando necesito un extra para seguir.", score: { Focus: 2 } },
+                    { text: "Por la mañana, siento que no me levanto.", score: { Power: 2 } },
+                    { text: "Por la noche, mi mente no se desconecta.", score: { Zen: 2 } }
                 ]
             },
             {
                 text: "¿Qué resultado buscas más de una bebida natural?",
                 options: [
-                    { text: "Una mente clara y enfocada.", score: { focus: 1 } },
-                    { text: "Sentirme más activo/a físicamente.", score: { energy: 1 } },
-                    { text: "Una sensación general de paz y bienestar.", score: { calm: 1 } }
+                    { text: "Una mente clara y enfocada.", score: { Focus: 1 } },
+                    { text: "Sentirme más activo/a físicamente.", score: { Power: 1 } },
+                    { text: "Una sensación general de paz y bienestar.", score: { Zen: 1 } }
                 ]
             }
         ];
@@ -219,6 +219,7 @@
     </script>
 </body>
 </html>
+
 
 
 
