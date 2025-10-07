@@ -223,14 +223,13 @@
         }
 
         // INICIO DEL QUIZ AL CARGAR LA PÁGINA (Arranque instantáneo para la feria)
-        // FIX FINAL: Envolvemos la carga inicial en un listener para asegurar que el DOM 
-        // y el script están completamente listos y evitar problemas de estado persistente.
-        document.addEventListener('DOMContentLoaded', () => {
-            loadQuestion(0);
-        });
+        // FIX FINAL: Llama directamente a resetQuiz() al inicio para garantizar que 
+        // currentQuestionIndex y scores se inicialicen correctamente a cero al cargar la página.
+        document.addEventListener('DOMContentLoaded', resetQuiz);
     </script>
 </body>
 </html>
+
 
 
 
