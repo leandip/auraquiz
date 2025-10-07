@@ -209,10 +209,14 @@
          * Reinicia el estado del quiz.
          */
         function resetQuiz() {
-            // FIX CRUCIAL: Reseteamos explícitamente las variables de estado global aquí, 
-            // asegurando que el índice de pregunta y los scores sean cero.
+            // FIX CRUCIAL DE ESTADO: Se asegura que el índice de pregunta se restablece.
             currentQuestionIndex = 0;
-            scores = { focus: 0, energy: 0, calm: 0 };
+            
+            // RESTABLECER SCORES (Versión más robusta): Limpiamos los puntajes de la ejecución anterior a cero 
+            // mediante la asignación directa de propiedades, lo que a menudo funciona mejor con problemas de caché/estado.
+            scores.Focus = 0;
+            scores.Power = 0;
+            scores.Zen = 0;
             
             // Volver a la pantalla de preguntas y empezar
             document.getElementById('result-screen').classList.add('hidden');
