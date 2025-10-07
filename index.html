@@ -223,11 +223,15 @@
         }
 
         // INICIO DEL QUIZ AL CARGAR LA PÁGINA (Arranque instantáneo para la feria)
-        loadQuestion(0);
-
+        // FIX FINAL: Envolvemos la carga inicial en un listener para asegurar que el DOM 
+        // y el script están completamente listos y evitar problemas de estado persistente.
+        document.addEventListener('DOMContentLoaded', () => {
+            loadQuestion(0);
+        });
     </script>
 </body>
 </html>
+
 
 
 
