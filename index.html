@@ -209,16 +209,20 @@
          * Reinicia el estado del quiz.
          */
         function resetQuiz() {
-            currentQuestionIndex = 0;
-            scores = { focus: 0, energy: 0, calm: 0 };
-
+            // Volver a la pantalla de preguntas y empezar
             document.getElementById('result-screen').classList.add('hidden');
-            document.getElementById('welcome-screen').classList.remove('hidden');
+            document.getElementById('question-screen').classList.remove('hidden');
+            
+            // Llama a loadQuestion con índice 0, que internamente resetea los scores
+            loadQuestion(0); 
         }
 
+        // INICIO DEL QUIZ AL CARGAR LA PÁGINA (Arranque instantáneo para la feria)
+        loadQuestion(0);
     </script>
 </body>
 </html>
+
 
 
 
