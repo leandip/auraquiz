@@ -209,19 +209,26 @@
          * Reinicia el estado del quiz.
          */
         function resetQuiz() {
+            // FIX CRUCIAL: Reseteamos explícitamente las variables de estado global aquí, 
+            // asegurando que el índice de pregunta y los scores sean cero.
+            currentQuestionIndex = 0;
+            scores = { focus: 0, energy: 0, calm: 0 };
+            
             // Volver a la pantalla de preguntas y empezar
             document.getElementById('result-screen').classList.add('hidden');
             document.getElementById('question-screen').classList.remove('hidden');
             
-            // Llama a loadQuestion con índice 0, que internamente resetea los scores
+            // Llama a loadQuestion con índice 0
             loadQuestion(0); 
         }
 
         // INICIO DEL QUIZ AL CARGAR LA PÁGINA (Arranque instantáneo para la feria)
         loadQuestion(0);
+
     </script>
 </body>
 </html>
+
 
 
 
